@@ -1,0 +1,15 @@
+[Unit]
+Description=Enferium Telegram Bot for 3x-ui
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/enferium-bot
+ExecStart=/opt/enferium-bot/.venv/bin/python /opt/enferium-bot/main.py
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
